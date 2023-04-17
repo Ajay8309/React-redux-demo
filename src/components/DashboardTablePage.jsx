@@ -25,11 +25,12 @@ const DashboardTablePage = ({ posts, loading, error, fetchPosts }) => {
     return <div>Error: {error}</div>;
   }
 
-  const handleRowClick = post => {
-    // console.log("Selected post:", post);
-    setSelectedPost(post);
-  };
-
+  // const handleRowClick = post => {
+  //   // console.log("Selected post:", post);
+  //   setSelectedPost(post);
+  // };
+  
+  let idd = 1;
  
 
   return (
@@ -44,7 +45,7 @@ const DashboardTablePage = ({ posts, loading, error, fetchPosts }) => {
         <tbody>
           {posts.map((post) => (
             <tr key={post.id} onClick={() => setSelectedPost(post)}>
-              <td>{post.id}</td>
+              <td>{idd++}</td>
               <td>{post.title}</td>
             </tr>
           ))}

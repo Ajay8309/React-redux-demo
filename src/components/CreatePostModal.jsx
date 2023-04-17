@@ -3,18 +3,16 @@ import { useDispatch } from 'react-redux';
 import { createPost } from '../redux/postsActions';
 import styled from 'styled-components';
 
-let postId = 100;
 const CreatePostModal = ({ onClose }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [idd, setId] = useState(100);
+  // const [idd, setId] = useState(100);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
    // dispatch(createPost({ title, body }));
-    // console.log()
-     dispatch(createPost({id: setId(idd + 1), title, body }))
+   dispatch(createPost({ title, body }));
     // Close modal
     onClose();
   };

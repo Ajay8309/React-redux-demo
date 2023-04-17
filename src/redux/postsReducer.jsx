@@ -4,6 +4,8 @@ const initialState = {
   error: null
 };
 
+// JSON.parse(localStorage.getItem('posts')) ||
+
 const postsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_POSTS_REQUEST":
@@ -45,12 +47,7 @@ const postsReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload
       };
-    // case "CREATE_POST":
-    //   return {
-    //     ...state, 
-    //     loading: false, 
-    //     error: action.payload
-    //   }  
+    
     default:
       return state;
   }
